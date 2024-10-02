@@ -210,7 +210,7 @@ async function GogoDLScrapper(animeid, cookie) {
         // const cheerio = require("cheerio");
         const body = cheerio.load(html);
         let data = {};
-        const links = body("div.download").find("a");
+        const links = body("div.cf-download").find("a");
         links.each((i, link) => {
             const a = body(link);
             data[a.text().trim()] = a.attr("href").trim();
